@@ -14,10 +14,10 @@ class StudentController extends Controller
         $studentModel = new Student();
         $students = $studentModel->getStudents();
 
-        print_r($students);
 
-        $this->view('students.index');
-        // require_once '../app/views/students/i'
+        $this->view('students.index', [
+            'students' => $students
+        ]);
     }
 
     public function create()

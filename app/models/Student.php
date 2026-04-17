@@ -23,14 +23,12 @@ class Student extends Database
 
         $result = $stmt->get_result();
 
-        while($student = $result->fetch_assoc()) {
+        while ($student = $result->fetch_assoc()) {
             $students[] = $student;
-
-            return $students;
-
 
 
         }
+        return $students;
 
     }
 

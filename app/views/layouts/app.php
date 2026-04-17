@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/output.css">
 </head>
 
-< class="min-h-screen flex flex-col bg-gray-100">
+<body class="min-h-screen flex flex-col bg-gray-100">
 
     <!--- Header Start --->
 
@@ -20,9 +20,8 @@
 
     <!--- Main Start --->
 
-    <main class="grow container mx-auto">a
+    <main class="grow container mx-auto">
         <?php require_once $content ?>
-
     </main>
 
     <!--- Main End --->
