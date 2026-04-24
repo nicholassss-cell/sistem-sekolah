@@ -39,7 +39,7 @@ class Router
         // /students/{id} = /students/#^([0-9]+)$#
 
         if(preg_match($pattern, $uri, $matches) && $method === $route['method']){
-        array_shift(array: $matches);
+        array_shift($matches);
 
         require_once '../app/controllers/' . $route['controller'] . '.php';
 
@@ -49,13 +49,12 @@ class Router
 
         call_user_func_array([$controller, $function], $matches);   
         return;
+    }
 
-        }
-
-       }
+}
 
           http_response_code(404);
-            echo '<h1>Page Not Found</h1>';
+            echo '<h1>404 = Page Not Found</h1>';
 
     }
 

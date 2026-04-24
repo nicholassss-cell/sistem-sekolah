@@ -42,8 +42,14 @@ class StudentController extends Controller
     public function edit(string $id)
     {
 
+    $id = intval($id);
+        $studentModel = new Student();
+        $student = $studentModel->getStudent($id);
 
-        $this->view('students.edit');
+
+        $this->view('students.edit', [
+            'student' => $student
+        ]);
 
     }
 
@@ -53,6 +59,21 @@ class StudentController extends Controller
         $studentModel->insert($_POST);
     }
 
+    public function update(string $id)
+    {
+        $id = intval($id);
+        $studentModel = new Student();
+        $studentModel->update($_POST, $id);
+
+    }
+
+     public function destroy(string $id)
+    {
+        $id = intval($id);
+        $studentModel = new Student();
+        $studentModel->delete($id);
+
+    }
 }
 
 
