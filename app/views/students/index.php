@@ -47,6 +47,7 @@
                             <form onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')" action="/students/<?= $student['id'] ?>" method="POST">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button type="submit" class="text-red-500">Hapus</button>
+                            </form>
                         </div>
                     </td>
                 </tr>

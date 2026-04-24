@@ -76,7 +76,7 @@ class Student extends Database
         $class = htmlspecialchars($data['class']);
         $phoneNumber = htmlspecialchars($data['phone_number']);
 
-        $query = "UPDATE {$this->table} SET name = nis = ?, class = ?, phone_number = ? WHERE id = ?";
+        $query = "UPDATE {$this->table} SET name = ?, nis = ?, class = ?, phone_number = ? WHERE id = ?";
 
         $stmt = $this->connection->prepare($query);
         $stmt->bind_param('ssssi', $name, $nis, $class, $phoneNumber, $id);
